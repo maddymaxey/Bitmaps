@@ -1,5 +1,5 @@
 
-
+var printType;
 var img;
 var smallPoint, largePoint;
 
@@ -106,5 +106,9 @@ function input(){
 
 
 
+}
+
+function tallPrint(){
+  printType = 1;
 }
 

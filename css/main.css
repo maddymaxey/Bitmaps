@@ -1,20 +1,9 @@
-/* ==========================================================================
-   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
-   ========================================================================== */
 
-html,
-button,
-input,
-select,
-textarea {
-    color: #222;
-}
+
 a:link{
 text-decoration: none;
  font-family: 'Titillium Web', sans-serif;
-    font-size: 50px;
     text-align: center;
-    color:gray;
     font-weight: 500;
 }
 
@@ -28,8 +17,7 @@ a:hover{
 #images{
     margin-left:auto;
     margin-right:auto;
-
-    width:800px;
+    width:650px;
 }
 
 h1{
@@ -57,20 +45,25 @@ h4{
 }
 li{
 
-    font-family: 'Titillium Web', sans-serif;
+
+
+
+}
+
+ul{
+        font-family: 'Titillium Web', sans-serif;
     font-size: 15px;
     text-align: left;
-    color:gray;
-    font-weight: 400;
+    color:black;
+    font-weight: 700;
     list-style-type: none;
-
 }
 
 p{
 
     font-family: 'Titillium Web', sans-serif;
     font-size: 20px;
-    text-align: left;
+    text-align: center;
     color:black;
     font-weight: 400;
 }
@@ -103,8 +96,8 @@ img {
     vertical-align: middle;
     text-align: center;
     width:300px;
-    margin:30px;
-    border-style: white;
+    margin-left: -10px;
+    margin-top: -10px;
 }
 
 fieldset {
@@ -124,6 +117,20 @@ textarea {
 
 }
 
+select{
+
+    width:600px;
+    height:300px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 70px;
+    text-align: center;
+    color:#ee7600 ;
+    font-weight: 500;
+    background: white;
+    margin-left:30%;
+
+}
+
 
 /* ==========================================================================
    Author's custom styles
@@ -136,31 +143,74 @@ body {
     font-size: 1em;
     line-height: 1.4;
     width:100%;
-    margin-top:0px;
+    margin-top: -80px;
+
+}
+#megatronNext{
+    width:200px;
+    height:150px;
+    margin-left:auto;
+    margin-top:100px;
+    margin-right:auto;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 50px;
+    color:white;
+}
+
+button{
+
+    width:300px;
+    height:150px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 35px;
+    text-align: center;
+    color:#ee7600 ;
+    font-weight: 500;
+    background: white;
+    margin-left:auto;
+    margin-right:auto;
+
+
+
 }
 #canvas{
     z-index: 5;
-    position:fixed;
+    margin-top:0px;
+
+}
+
+#defaultcanvas{
+    margin-top:0px;
+    z-index: 5;
+
 }
 #main {
     margin-left:100px;
     margin-right:100px;
+    margin-top:1000px;
    /* margin-left:300px;
     text-align:left;
     float:left;
     margin-top:0px; */
 }
 
-/*#navigation{
+#navigation{
 
     
-    height:20px;
-    width:1000px;
-    margin-top:0px;
+    height:150px;
+    width:200px;
+    margin-top:200px;
     position:fixed;
-    z-index: 1;
+    z-index: -1;
+    background-color: black;
+    float:right;
+    font-size: 15px;
+    color:white;
+    background-image:url("../img/whitebk.png");
+    background-repeat:
 
-}*/
+
+}
 
 #about:hover {
    width:160px;
@@ -184,7 +234,7 @@ body {
 }
 
 
-.page{padding-top:80px;
+.page{padding-top:0px;
         height: 2000px;
 
 }

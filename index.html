@@ -10,133 +10,79 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
+        <link rel="icon" type="image/png" href="img/favicon.png">
+        <title>Bitmap Stacker</title>
+
+        <!--STYLESHEETS -->
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="icon" type="image/png" href="img/favicon.png">
-        <title>Maddy Maddy</title>
-        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:200italic,200,400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-   <script type="text/javascript" src ="js/jszip.js"></script>
-   <script type="text/javascript" src ="js/FileSaver.js"></script>
-   <script type="text/javascript" src="js/p5.min.js"></script>
-     <script type="text/javascript" src ="js/p5.dom.js"></script>
         
+        <!--- SCRIPTS -->
+        <script type="text/javascript" src ="js/jszip.js"></script>
+        <script type="text/javascript" src ="js/FileSaver.js"></script>
+        <script type="text/javascript" src= "js/p5.min.js"></script>
+        <script type="text/javascript" src ="js/p5.dom.js"></script>
+        <script type="text/javascript" src ="js/main.js"></script>
+        <script type="text/javascript" src ="js/sketch.js"></script> <!--CANVAS -->
 
-        <!--[if lt IE 9]>
-            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
-        <![endif]-->
+        <!-- FONTS -->
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:200italic,200,400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     </head>
-    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:200italic,200,400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-   <div id="header">
- 
+  
 
-  <!--  <div id="navigation">
+    <div id="header">
+        <div id="navigation">
+           <a data-scroll href="#megatron"> SIZE </a> <br>
+           <a data-scroll href="#page1">LAYERS</a><br> 
+           <a data-scroll href="#page2">DIVISION</a><br>
+           <a data-scroll href="#page3">DESIGN</a> <br>
+            <a data-scroll href="#page4">DESIGN PLACEMENT</a> <br>
+           <a data-scroll href="#page5">DOWNLOAD</a> <br>
+        </div> <!--END OF NAVIGATION-->
 
-   <ul>
-     <a data-scroll href="#megatron"><a/>
-     <a data-scroll href="#page1"><li> 1.) SIZE</li></a> 
-      <a data-scroll href="#page2"><li> 2.)LAYERS</li></a> 
-       <a data-scroll href="#page3"><li> 3.)DIVISION<li></a>
-       <a data-scroll href="#page4"><li> 4.)DESIGN<li></a> 
-       <a data-scroll href="#page5"><li> 5.)DOWNLOAD<li></a> 
-
-                
-     <ul/>
-    </div> -->
-
-
-     <div id="megatron">
-    <head>
-  <h1> Let's Get Started</h1>
-  <h4>Welcome! This website will help you create a stack of files to print using the Spark Ember SLA Printer. <br>Begin by choosing whether you want a quick printing horizontal swatch, or a longer,vertical swatch.</h4>
-
- <div id="images">
-  <div id="tallprint"><img src="img/tallprint.png"><h4> Click on this image to create a quick swatch</h4></div>
-
-  <div id="longprint"><img src="img/squareprint.png"></div><h4> Click on this image to create a longer swatch</h4><div>
-  </div>
-
-  </head>
-   
-<a data-scroll href="#page1"> NEXT</a>
-
-<form action="begin-create-done.html" method="get">
-DIMENSIONS
-<select name="mydropdown">
-<option value="Milk">400px X 400px</option>
-<option value="Cheese">300 X 600</option>
-<option value="Bread">66</option>
-</select>
-<br>
-
-MINIMUM PIXEL SIZE
-<select name="mydropdown">
-<option value="Milk">15</option>
-<option value="Cheese">33</option>
-<option value="Bread">66</option>
-</select>
-
-<br>
-
-DESIGN
-<select name="mydropdown">
-<option value="Milk">15</option>
-<option value="Cheese">33</option>
-<option value="Bread">66</option>
-</select>
-<input type="submit" value="NEXT"><br>
-</form>
-
-    </div>
-
-   </div>
-   
-
-    </head>
+         <div id="megatron">
+            <h1> Let's Get Started</h1>
+            <h4>Welcome! This website will help you create a stack of files to print using the Spark Ember SLA Printer. <br>Begin by choosing whether you want a quick printing horizontal swatch, or a longer,vertical swatch.</h4>
+            <div id="images">
+                <button onclick="tallPrint()"><img src="img/tallprint.png"></button> 
+                <button onclick="squarePrint()" ><img src="img/squareprint.png"></button> 
+            </div><!--END OF IMAGES-->
+            <div id= "megatronNext"><a data-scroll href="#page1"> <h1> Next</h1></a><div>    
+         </div><!--END OF MEGATRON-->
+    </div><!--END OF HEADER-->
 
     <body>
-  
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+        <div id="main">
+            <div id="page1" class="page">
+                <h3>LAYERS</h3>
+                <select name="mydropdown">
+                    <option value="Milk"> 50 at 25 Microns</option>
+                    <option value="Cheese">100</option>
+                    <option value="Bread">900</option>
+                </select>
+                <a data-scroll href="#megatron"><h5> PREVIOUS</h5></a> 
+                <a data-scroll href="#page2"><h5> NEXT</h5></a> 
+            </div> <!--END OF PAGE 1-->
 
-
- 
-
-    <div id="main">
-    <div id="page1" class="page">
-<div id="viewport">
-
-<h3>LAYERS</h3>
-<a data-scroll href="#megatron"><h5> PREVIOUS</h5></a> 
-<a data-scroll href="#page2"><h5> NEXT</h5></a> 
-
-</div>
-<br>
-
-
-
-
-            </div><!--page1-->
-       
-    <div id="page2" class="page">
-    <h3>DIVISIONS</h3><p> The Ember printer </p>
-<select name="mydropdown">
-<option value="Milk">15</option>
-<option value="Cheese">33</option>
-<option value="Bread">66</option>
-</select>
-    </div>
+        <div id="page2" class="page">
+             <h3>DIVISIONS</h3>
+            <p>Choose how you would like your object to be sliced.</p>
+            <select name="mydropdown">
+                <option value="Milk">15</option>
+                <option value="Cheese">33</option>
+                <option value="Bread">66</option>
+            </select>
+        </div> <!--END OF PAGE 2-->
            
-     <div id="page3" class="page">
-    <h3> DESIGN </h3><p> The Ember printer </p>
-    <div id="canvas">
-    <script type="text/javascript" src ="js/sketch.js"></script>
-    </div>
-    <li><button onclick="automata()">automata</button></li>
-    <a data-scroll href="#page1"><li> PREVIOUS</li></a> 
-<a data-scroll href="#page1"><li> NEXT</li></a> 
-    </div>
+        <div id="page3" class="page">
+        <h3> DESIGN </h3><p> The Ember printer </p>
+            <div id="canvas">
+            I WANT CANVAS TO GO HERE
+        </div><!--END OF CANVAS-->
+        <button onclick="automata()">automata</button>
+        <a data-scroll href="#page2">PREVIOUS</a> 
+        <a data-scroll href="#page4"> NEXT</a> 
+    </div><!--END OF PAGE 3-->
 
      <div id="page4" class="page">
     <h3> PLACE DESIGN </h3><p> The Ember printer </p>
