@@ -23,7 +23,7 @@
         <script type="text/javascript" src= "js/p5.min.js"></script>
         <script type="text/javascript" src ="js/p5.dom.js"></script>
         <script type="text/javascript" src ="js/main.js"></script>
-        <script type="text/javascript" src ="js/sketch.js"></script> <!--CANVAS -->
+        
 
         <!-- FONTS -->
         <link href='http://fonts.googleapis.com/css?family=Titillium+Web:200italic,200,400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -32,79 +32,90 @@
 
     <div id="header">
         <div id="navigation">
+        <div id="navText">
            <a data-scroll href="#megatron"> SIZE </a> <br>
            <a data-scroll href="#page1">LAYERS</a><br> 
            <a data-scroll href="#page2">DIVISION</a><br>
            <a data-scroll href="#page3">DESIGN</a> <br>
             <a data-scroll href="#page4">DESIGN PLACEMENT</a> <br>
            <a data-scroll href="#page5">DOWNLOAD</a> <br>
+                   </div>
         </div> <!--END OF NAVIGATION-->
-
+     
+         
          <div id="megatron">
             <h1> Let's Get Started</h1>
             <h4>Welcome! This website will help you create a stack of files to print using the Spark Ember SLA Printer. <br>Begin by choosing whether you want a quick printing horizontal swatch, or a longer,vertical swatch.</h4>
             <div id="images">
-                <button onclick="tallPrint()"><img src="img/tallprint.png"></button> 
-                <button onclick="squarePrint()" ><img src="img/squareprint.png"></button> 
+                <button onclick="tallPrint()" class="sizeButton" onmouseover="description2()" onmouseout="hideDescription()"><img src="img/tallprint.png"></button> 
+                <button onclick="squarePrint()" class ="sizeButton" onmouseover="description1()" onmouseout="hideDescription()"><img src="img/squareprint.png"></button> 
+                <h5 id="description1"> SQUARE PRINT<br>Select this option for a quick square print</h5>
+                <h5 id="description2"> LONG PRINT<br>Select this option for a long print with many layers </h5>
             </div><!--END OF IMAGES-->
             <div id= "megatronNext"><a data-scroll href="#page1"> <h1> Next</h1></a><div>    
          </div><!--END OF MEGATRON-->
-    </div><!--END OF HEADER-->
+     </div><!--END OF HEADER-->
 
     <body>
         <div id="main">
             <div id="page1" class="page">
                 <h3>LAYERS</h3>
+                 <a data-scroll href="#megatron"><h5> PREVIOUS</h5></a> 
+                  <a data-scroll href="#page2"> NEXT</a>
+
+             <form id="layerForm">
                 <select name="mydropdown">
-                    <option value="Milk"> 50 at 25 Microns</option>
-                    <option value="Cheese">100</option>
-                    <option value="Bread">900</option>
+                    <option value="33" > 33 at 50 Microns</option>
+                    <option value="15">15 at 100 Microns</option>
+                    <option value="600" id="50Microns">600 at 50 Microns</option>
                 </select>
-                <a data-scroll href="#megatron"><h5> PREVIOUS</h5></a> 
-                <a data-scroll href="#page2"><h5> NEXT</h5></a> 
+                   </form>
+                   <button type="submit" form="layerForm" value="Submit" >NEXT</button> 
             </div> <!--END OF PAGE 1-->
 
         <div id="page2" class="page">
              <h3>DIVISIONS</h3>
             <p>Choose how you would like your object to be sliced.</p>
-            <select name="mydropdown">
-                <option value="Milk">15</option>
-                <option value="Cheese">33</option>
-                <option value="Bread">66</option>
-            </select>
+          <form id="divForm">
+                <select name="mydropdown">
+                    <option value="5" > 5 layer slices</option>
+                    <option value="15">15 layer slices</option>
+                    <option value="0">Base + Surface</option>
+                </select>
+                   </form>
         </div> <!--END OF PAGE 2-->
            
         <div id="page3" class="page">
-        <h3> DESIGN </h3><p> The Ember printer </p>
-            <div id="canvas">
-            I WANT CANVAS TO GO HERE
-        </div><!--END OF CANVAS-->
-        <button onclick="automata()">automata</button>
-        <a data-scroll href="#page2">PREVIOUS</a> 
+            <h3> DESIGN </h3>
+         <button class="designSelect" onclick="hair()">TRIANGLE</button>
+         <button class="designSelect" onclick="automata()">AUTOMATA</button>
+          <button class="designSelect" onclick="base()">BASE</button>
+                <a data-scroll href="#page2">PREVIOUS</a> 
         <a data-scroll href="#page4"> NEXT</a> 
+
+            <div id="canvas">
+            <script type="text/javascript" src ="js/sketch.js"></script> 
+        </div><!--END OF CANVAS-->
+  
+
     </div><!--END OF PAGE 3-->
 
-     <div id="page4" class="page">
-    <h3> PLACE DESIGN </h3><p> The Ember printer </p>
-<a data-scroll href="#page3"><h5> PREVIOUS</h5></a> 
-<a data-scroll href="#page5"><h5> NEXT</h5></a>  
-    </div>
+        <div id="page4" class="page">
+             <h3> PLACE DESIGN </h3>
+            <a data-scroll href="#page3"><h5> PREVIOUS</h5></a> 
+             <div id= "megatronNext"><a data-scroll href="#page5"> <h1> Next</h1></a><div>    
+        </div>
 
 
-  <div id="page5" class="page">
-    <h3> DOWNLOAD! </h3>
-  <a data-scroll href="#page4"><h5> PREVIOUS</h5></a> 
-     <li><button onclick="download()">4.) DOWNLOAD YOUR FILE</button></li>
-     <p> curious about next steps? Visit Instructables to learn how to create a tar.gz file to upload to the Ember Printer.</p>
-<a href="mailto:maddy@thecrated.com"><li> Questions or errors?</li></a> 
-    </div>
+        <div id="page5" class="page">
+            <h3> DOWNLOAD! </h3>
+             <a data-scroll href="#page4"><h5> PREVIOUS</h5></a> 
+             <button onclick="download()"> DOWNLOAD YOUR FILE</button>
+            <p> curious about next steps? Visit Instructables to learn how to create a tar.gz file to upload to the Ember Printer.</p>
+            <a href="mailto:maddy@thecrated.com"><h4>Questions or errors?</h4></a> 
+        </div>
+    </div> <!--END OF MAIN-->
 
-     
-    </div> <!--main-->
-        
-
-           
-        
              <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
             <script src="js/vendor/jquery-1.9.0.min.js"></script>
             <script src="js/jquery.lazylinepainter-1.1.min.js"></script>
@@ -112,10 +123,8 @@
             <script src="js/main.js"></script>
             <script src="dist/js/bind-polyfill.js"></script>
             <script src="dist/js/smooth-scroll.js"></script>
-    
-           
     </body>
      <script>
-                smoothScroll.init();
-              </script>
+    smoothScroll.init();
+     </script>
 </html>

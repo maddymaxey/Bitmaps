@@ -2,6 +2,8 @@
 var printType;
 var img;
 var smallPoint, largePoint;
+var sceneW = 750;
+var sceneH = 750;
 
 
 var w = 10;
@@ -15,7 +17,7 @@ var generation = 0;
 var ruleset = [0, 1, 0, 1, 1, 0, 1, 0];
 
 function setup() {
-  createCanvas(600, 400);
+  createCanvas(1200, 800);
   //var rightcell= createCanvas(300,300);
   cells = Array(floor(width/w));
   for (var i = 0; i < cells.length; i++) {
@@ -31,20 +33,18 @@ function setup() {
 
 }
 
-
-
 function automata() {
   for (var n = 0; n < 50; n++) {
   for (var i = 0; i < cells.length; i++) {
     if (cells[i] === 1) {
-      fill(200);
+      fill(255);
     } else {
-      fill(51);
+      fill(0);
       noStroke();
-      rect(i*w, generation*w, w, w);
+      rect(i*w, generation*w+25, w, w);
     }
   }
-  if (generation < height/w) {
+  if (generation < sceneW/w) {
     generate();
   }
 }
@@ -82,15 +82,26 @@ function rules(a, b, c) {
   return 0;
 }
 
+function hair(){
+  setup();
+  background(0);
+  triangle(sceneW/2, sceneH/2, 58, 20, 86, 75);
 
+}
 
+function base(){
+    setup();
+    background(0);
+    rect((width-sceneW)/2, (height-sceneH)/2, sceneW, sceneH);
+
+}
 
 
 function download(){
 
 var zip = new JSZip();
 zip.file("Printsettings.txt", "Hello World\n");
-for (var i = 0; i < 33; i++) {
+for (var i = 0; i < layers+1; i++) {
 var imageData = canvas.toDataURL('image/png');
 zip.file("slice_"+i+".png", imageData.slice(22), {base64: true}); // remove base64 tag from image string 
 }
@@ -108,7 +119,4 @@ function input(){
 
 }
 
-function tallPrint(){
-  printType = 1;
-}
 
